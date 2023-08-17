@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const nest = () => {
     const router = useRouter()
@@ -8,6 +9,7 @@ const nest = () => {
     <div>
         Dynamic Routing
         {id}
+        <Link href={'/'} >Home</Link>
     </div>
   )
 }
