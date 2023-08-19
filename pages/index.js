@@ -5,19 +5,22 @@
 
 // const inter = Inter({ subsets: ['latin'] })
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 
 
 export default function Home() {
+
+  const router = useRouter()
+  const handler = () =>{
+    console.log(" Your Order is placing");
+    router.push('/product/id')
+  }
   return(
     <div>
-      <Link href='/blog/nest/id' >
-        blog
-      </Link>
-      <div>
-        <Link href={'/blog/nest/1'} >Nest 1</Link>
-        <Link href={'/blog/nest/2'} >Nest 2</Link>
-        <Link href={'/blog/nest/3'} >Nest 3</Link>
-      </div>
+      <Link href={'/blog'} > blog </Link>
+      <Link href={'/doc'} >doc</Link>
+      <Link href={'/product'} >product</Link>
+      <button onClick={handler} >Place order</button>
     </div>
   )
 }
